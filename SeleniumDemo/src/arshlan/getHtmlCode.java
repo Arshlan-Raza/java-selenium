@@ -11,7 +11,7 @@ public class getHtmlCode {
 	
 	public static void myTest(WebDriver driver) {
 		driver.navigate().to("https://www.google.com");
-//		driver.get("https://www.google.com");
+
 		String ps = driver.getPageSource();
 		System.out.println(ps);
 		
