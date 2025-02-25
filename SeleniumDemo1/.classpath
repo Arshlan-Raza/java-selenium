@@ -8,5 +8,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="C:/SeleniumWebDriver/selenium-server-4.28.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/arsha/Downloads/commons-io-2.3.jar/commons-io-2.3.jar"/>
+	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
