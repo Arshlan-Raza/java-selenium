@@ -17,8 +17,7 @@ public class CollectionExample {
         Collections.sort(list);
 
         System.out.println("Sorted List: " + list);
-e
-        
+
         HashSet<String> set = new HashSet<>();
 
         set.add("Apple");
