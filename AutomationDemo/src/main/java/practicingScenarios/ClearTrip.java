@@ -34,7 +34,7 @@ public class ClearTrip {
 		WebElement dateButton = driver.findElement(By.xpath("//div[@data-testid='dateSelectOnward']"));
 		dateButton.click();
 		
-		WebElement todaysDate = driver.findElement(By.xpath("//div[contains(@class,'Day-grid')]//div[text() = '25']"));
+		WebElement todaysDate = driver.findElement(By.xpath("//div[contains(@class,'Day-grid')]//div[text() = '27']"));
 		todaysDate.click();
 		
 		driver.findElement(By.xpath("//h4[text() = 'Search flights']")).click();

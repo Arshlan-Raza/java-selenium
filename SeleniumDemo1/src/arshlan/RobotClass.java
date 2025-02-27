@@ -25,6 +25,8 @@ public class RobotClass {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Articles"))).click();
 		
 		Robot rbt = new Robot() ;
+		rbt.mouseMove(20, 20);
+		
 		rbt.keyPress(KeyEvent.VK_DOWN);
 		Thread.sleep(3000);
 		rbt.keyPress(KeyEvent.VK_TAB);
