@@ -40,8 +40,6 @@ public class FlightWebTwo {
         to.sendKeys("Prayagraj");
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//p[contains(text(),'Prayagraj')]"))).click();
 
-//        WebElement dateButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[@for='departure']")));
-//        dateButton.click();
 
         LocalDate today = LocalDate.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d");

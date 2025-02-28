@@ -3,14 +3,11 @@ package taskThree;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -45,10 +42,6 @@ public class ShopWebPageOne {
 
 		// Switch to the new tab (the last window in the list)
 		driver.switchTo().window(itemWindow.get(itemWindow.size() - 1));
-
-		
-//		Alert alert = driver.switchTo().alert();
-//		alert.dismiss();
 		
 		//select item size 
 		WebElement itemSize = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//p[text()='8']")));
@@ -59,8 +52,6 @@ public class ShopWebPageOne {
 		//add the item to cart 
 		WebElement itemAdd = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='ADD TO BAG']")));
 		itemAdd.click();
-		
-		driver.switchTo().frame(0);
 
 		//checking if the item has been added 
 		WebElement itemCart = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Bag']")));
@@ -73,25 +64,27 @@ public class ShopWebPageOne {
 		addToCart(driver);
 		WebDriverWait  wait = new WebDriverWait(driver,Duration.ofSeconds(40));
 		
-		WebElement removeItem1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='REMOVE']")));
-		removeItem1.click();
+		WebElement removeItem = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='REMOVE']")));
+		removeItem.click();
 		
-		WebElement removeItem2 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='REMOVE']")));
-		removeItem2.click();
+		
+		WebElement removeConfirm = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='inlinebuttonV2-base-actionButton ']")));
+		removeConfirm.click();
 	}
 	
 	public void checkOut(WebDriver driver) {
-		driver.get("https://www.myntra.com/");
+		addToCart(driver);
 		WebDriverWait  wait = new WebDriverWait(driver,Duration.ofSeconds(40));
 		
-		WebElement bookButton = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Book a Table")));
-		bookButton.click();
+		WebElement placeBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='PLACE ORDER']")));
+		placeBtn.click();
 	}
 	
 	public static void main(String[] args) {
 		WebDriver driver = new ChromeDriver() ;
 		ShopWebPageOne obj = new ShopWebPageOne();
 		obj.deleteFromCart(driver);
+		obj.checkOut(driver);
 		
 		
 	}
