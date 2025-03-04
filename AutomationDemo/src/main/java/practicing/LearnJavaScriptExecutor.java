@@ -34,10 +34,7 @@ public class LearnJavaScriptExecutor {
 //        WebElement element = driver.findElement(By.id("elementId"));
 //        jsExecutor.executeScript("arguments[0].scrollIntoView(true);", element);
 
-        
-        
-        
-		
+
 	}
 
 }
