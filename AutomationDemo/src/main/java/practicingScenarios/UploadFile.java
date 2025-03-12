@@ -27,14 +27,6 @@ public class UploadFile {
   
         WebElement button = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text() = 'Browse …']")));
         
-        // Scroll the element into view and click it using JavaScript
-//        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", button);
-//        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", button);  
-        
-        // Alternatively, if you want to use Actions class:
-//         Actions actions = new Actions(driver);
-//         actions.moveToElement(button).click().perform();
-        
         // Now upload the file directly using the input field
         File resume = new File("D:\\Placement\\Resumes\\resumedummy_.pdf");
         String path = resume.getAbsolutePath();
@@ -42,4 +34,5 @@ public class UploadFile {
         // Use the input element directly to send the file path
         driver.findElement(By.id("input-4")).sendKeys(path);
     }
+    
 }

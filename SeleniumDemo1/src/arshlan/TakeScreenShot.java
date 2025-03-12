@@ -24,11 +24,17 @@ public class TakeScreenShot {
 		FileUtils.copyFile(srcFile,destFile);
 		driver.close();
 		
+		
+		driver.get("");
+		TakesScreenshot ts1 = (TakesScreenshot) driver ;
+		File srcFile1 = ts1.getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(srcFile1, destFile);
+		
 	}
 	
 	public static void main(String[] args) throws IOException {
 		WebDriver driver = new ChromeDriver() ;
-		TakeScreenShot.myTest(driver);
+		TakeScreenShot.myTest(driver) ;
 	}
 
 }

@@ -1,10 +1,14 @@
   package arshlan;
 
+import java.time.Duration;
 import java.util.Set;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MultipleWindow {
 	
@@ -34,7 +38,7 @@ public class MultipleWindow {
 					
 			}
 			
-		
+			
 		Set<String> allWindowsOpened = driver.getWindowHandles();
 		System.out.println("Number of opened window:"+allWindowsOpened.size());
 		

@@ -19,7 +19,7 @@ public class LearningDropDown {
         WebElement firstOption = driver.findElement(By.xpath("//span[@id='speed-button']"));
         firstOption.click();
 
-        driver.findElement(By.xpath("//li[@class='ui-menu-item']//div[text()='Slower']")).click();
+        driver.findElement(By.xpath("//li[@class='ui-menu-item']//div[text()='Fast']")).click();
 
         driver.quit();
     }

@@ -14,6 +14,7 @@ public class GetAllLinks {
 	}
 	
 	public static void main(String[] args) {
+		
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.flipkart.com/");
 		List<WebElement> allLinks = driver.findElements(By.xpath("//a"));

@@ -24,6 +24,10 @@ public class TakeScreenShotWithDateAndTime {
 		String v = d.toString();
 		String v2 = v.replaceAll(":", "-");
 		
+		Date s = new Date() ;
+		String v1 = d.toString();
+		String v3 = v1.replace(":", "-");
+		
 		TakesScreenshot ts = (TakesScreenshot)driver;
 		File srcFile = ts.getScreenshotAs(OutputType.FILE);
 		

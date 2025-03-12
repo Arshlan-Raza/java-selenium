@@ -29,7 +29,7 @@ public class ActionClassScenarios2 {
 		
 		Actions action = new Actions(driver);
 		action.contextClick(ele).perform();
-		
+	
 		Robot r=new Robot(); 
 		r.keyPress(KeyEvent.VK_T);
 		

@@ -27,26 +27,21 @@ public class AutomatingTaskOne {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30)); 
 		WebDriverWait  wait = new WebDriverWait(driver,Duration.ofSeconds(40));
 		
-		String currWindow = driver.getWindowHandle();
-		
-//		driver.switchTo().frame(0);
-//		WebElement closeChatBox = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='mat-mdc-button-touch-target']")));
-//		closeChatBox.click();
+		WebElement iframe = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//iframe[@id='gordon-now-chatbot']")));
 
-
-		Robot rbt = new Robot();
-		rbt.mouseMove(1460, 370);
-		rbt.mousePress(InputEvent.BUTTON1_DOWN_MASK);	
-		rbt.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+		driver.switchTo().frame(iframe); 
+		WebElement closeBtn = driver.findElement(By.xpath("//button[@id='close-chat-window']"));
+		closeBtn.click();
 		
-//		driver.switchTo().window(currWindow);
+		WebElement iframe2 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='fab-dismiss']")));
+		iframe2.click();
+		
+		driver.switchTo().defaultContent();
 		
 		WebElement signUp = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//li[@id='menu-item-21']")));
 		signUp.click();
-		
-		driver.switchTo().frame(0);
-		
-		WebElement createAccount = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Create Account")));
+
+		WebElement createAccount = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"login\"]//a[text()='Create Account']")));
 		
 		createAccount.click();
 		
